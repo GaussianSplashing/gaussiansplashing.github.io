@@ -451,6 +451,40 @@
       adjustOverlayPosition();
     });
   });
+
+  function getDynamicHeight() {
+      if (window.matchMedia('(max-width: 419px)').matches) {
+          return 110;
+      } else if (window.matchMedia('(min-width: 420px) and (max-width: 600px)').matches) {
+          return 150;
+      } else {
+          return 227;
+      }
+  }
+
+  function adjustItemWidth(container) {
+      var video = container.querySelector('video');
+      var item = container; //container.querySelector('.slider-item');
+      var ch = getDynamicHeight();
+
+      if (video.readyState >= 1) {
+        item.style.width = video.videoWidth * (ch / video.videoHeight) + 'px';
+      } else {
+          video.addEventListener('loadedmetadata', function() {
+            item.style.width = video.videoWidth * (ch / video.videoHeight) + 'px';
+          });
+
+          video.addEventListener('resize', function() {
+            item.style.width = video.videoWidth * (ch / video.videoHeight) + 'px';
+          });
+      }
+  }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var containers = document.querySelectorAll('.item');
+            containers.forEach(adjustItemWidth);
+        });
+
 </script>
 
 <script>
