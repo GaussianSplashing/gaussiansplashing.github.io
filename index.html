@@ -279,6 +279,21 @@ text-shadow: 0 0 5px #4b0082, 0 0 10px #6a0dad, 0 0 15px #9400d3, 0 0 20px #8a2b
 
 <section class="section">
   <div class="container is-max-desktop">
+    <h2 class="title is-3">Comparison with PhysGaussian</h2>
+    <img src="./static/image/physgs.png" class="interpolation-image" />
+    <p>
+      We compare our method with PhysGaussian for fluid editing and rendering. The first row presents 
+      our results, while the second row shows those of PhysGaussian. In this experiment, we transform 
+      a hot dog placed on a plate into fluid, allowing it to interact dynamically with the stationary 
+      plate. PhysGaussian struggles to render realistic fluid effects, whereas our method effectively 
+      renders fluid and accurately captures water highlights, yielding significantly more realistic 
+      results.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
 
     <div class="columns is-centered">
       <!-- Visual Effects. -->
@@ -286,7 +301,7 @@ text-shadow: 0 0 5px #4b0082, 0 0 10px #6a0dad, 0 0 15px #9400d3, 0 0 20px #8a2b
         <div class="content">
           <h2 class="title is-3">Shadow Mapping</h2>
           <p>
-            we demonstrate that GSP, with 
+            We demonstrate that GSP, with 
             the addition of nearly soft shadows, significantly improves 
             visual realism compared to vanilla 3DGS. Without these 
             shadows, objects appear like flat layers pasted onto the 
@@ -310,7 +325,7 @@ text-shadow: 0 0 5px #4b0082, 0 0 10px #6a0dad, 0 0 15px #9400d3, 0 0 20px #8a2b
         <div class="columns is-centered">
           <div class="column content">
             <p>
-              we compare fluids
+              We compare fluids
               rendered using purely diffuse materials with those that incorporated 
               specular reflections. The fluids without specular
               reflection appear almost smoke-like, while the inclusion of
